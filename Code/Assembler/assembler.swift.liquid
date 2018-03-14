@@ -10,7 +10,7 @@ import UIKit.UIViewController
 
 struct {{ module_info.name }}ModuleAssembler {
   static func makeModule(
-    _ configurator: ModuleInputConfigurator<{{ module_info.name }}ModuleInfo>? = nil
+    _ configurator: ModuleInputConfigurator<{{ module_info.name }}ModuleInput>? = nil
   ) -> UIViewController {
     let view = {{ module_info.name }}ViewController()
     let presenter = {{ module_info.name }}Presenter()

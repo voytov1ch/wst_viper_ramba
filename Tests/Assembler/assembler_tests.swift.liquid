@@ -1,0 +1,37 @@
+//
+//  {{ prefix }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import XCTest
+@testable import {{ module_info.project_name }}
+
+class {{ module_info.name }}ModuleAssemblerTests: XCTestCase {
+  var viewController: UIViewController!
+
+  override func setUp() {
+    super.setUp()
+    viewController = {{ module_info.name }}ModuleAssembler.makeModule()
+  }
+
+  func testModule() {
+    let viewController = self.viewController as? {{ module_info.name }}ViewController
+    let presenter = viewController?.output as? {{ module_info.name }}Presenter
+    let interactor = presenter?.interactor as? {{ module_info.name }}Interactor
+    let router = presenter?.router as? {{ module_info.name }}Router
+
+    XCTAssertNotNil(viewController)
+    XCTAssertNotNil(presenter)
+    XCTAssertNotNil(presenter?.router)
+    XCTAssertNotNil(presenter?.view)
+
+    XCTAssertNotNil(interactor)
+    XCTAssertNotNil(interactor?.output)
+
+    XCTAssertNotNil(router)
+    XCTAssertNotNil(router?.view)
+  }
+}

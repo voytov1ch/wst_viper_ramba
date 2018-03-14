@@ -24,12 +24,15 @@ code_files:
 - {name: Module/Router/Router.swift, path: Code/Router/router.swift.liquid}
 
 # View layer
-- {name: Module/View/ViewController/ViewInput.swift,  path: Code/View/ViewController/view_input.swift.liquid}
-- {name: Module/View/ViewController/ViewOutput.swift, path: Code/View/ViewController/view_output.swift.liquid}
-- {name: Module/View/ViewController/ViewController.swift, path: Code/View/ViewController/viewcontroller.swift.liquid}
+- {name: Module/View/ViewInput.swift,  path: Code/View/view_input.swift.liquid}
+- {name: Module/View/ViewOutput.swift, path: Code/View/view_output.swift.liquid}
+- {name: Module/View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+
+# The declarations for test files
+test_files:
 
 # Assembly tests
-- {name: Assembly/AssemblyTests.swift, path: Tests/Assembly/assembly_tests.swift.liquid}
+- {name: Assembler/AssemblerTests.swift, path: Tests/Assembler/assembler_tests.swift.liquid}
 
 # Interactor tests
 - {name: Interactor/InteractorTests.swift, path: Tests/Interactor/interactor_tests.swift.liquid}
@@ -42,7 +45,3 @@ code_files:
 
 # View tests
 - {name: View/ViewTests.swift, path: Tests/View/view_tests.swift.liquid}
-
-# The declarations for test files
-test_files:
-- {name: Service/ServiceTests.m, path: Tests/Service/service_tests.m.liquid}
