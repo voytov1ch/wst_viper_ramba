@@ -1,0 +1,31 @@
+//
+//  {{ prefix }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit.UIViewController
+
+struct {{ module_info.name }}ModuleAssembler {
+  static func makeModule(
+    _ configurator: ModuleInputConfigurator<{{ module_info.name }}ModuleInfo>? = nil
+  ) -> UIViewController {
+    let view = {{ module_info.name }}ViewController()
+    let presenter = {{ module_info.name }}Presenter()
+    let interactor = {{ module_info.name }}Interactor()
+    let router = {{ module_info.name }}Router()
+
+    view.output = presenter
+    presenter.view = view
+    presenter.router = router
+    presenter.interactor = interactor
+    interactor.output = presenter
+    router.view = view
+
+    configurator?(presenter)
+
+    return view 
+  }
+}
