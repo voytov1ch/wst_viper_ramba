@@ -8,7 +8,7 @@
 
 import UIKit.UIViewController
 
-struct {{ module_info.name }}ModuleAssembler {
+enum {{ module_info.name }}ModuleAssembler {
   static func makeModule(
     _ configurator: ModuleInputConfigurator<{{ module_info.name }}ModuleInput>? = nil
   ) -> UIViewController {
